@@ -1,0 +1,15 @@
+<%= simple_form_for @spot, :html => {:class => 'form-horizontal'} do |f| %>
+    <%= f.input :name %>
+    <%= f.input :image %>
+    <% if @spot.image? %>
+        <%= image_tag @spot.image.url, width: 300 %>
+    <% end %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :year %>
+    <%= f.input :comment %>
+
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                spots_path, :class => 'btn btn-default' %>
+<% end %>
