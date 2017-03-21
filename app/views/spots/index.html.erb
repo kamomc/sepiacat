@@ -21,7 +21,7 @@
       <tr>
         <td><%= link_to spot.id, spot_path(spot) %></td>
         <td><%= spot.name %></td>
-        <td><%= spot.image %></td>
+        <td><%= image_tag spot.image.url, width: 200 %></td>
         <td><%= spot.latitude %></td>
         <td><%= spot.longitude %></td>
         <td><%= spot.year %></td>
