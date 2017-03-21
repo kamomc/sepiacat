@@ -35,6 +35,7 @@ gem 'jbuilder', '~> 2.5'
 
 # 画像のアップロード
 gem 'carrierwave'
+gem 'carrierwave-aws'
 
 # BootStrapをあてる
 gem 'less-rails'
@@ -57,7 +58,6 @@ group :development do
 end
 
 group :production do
-  gem 'fog'
   gem 'pg'
 end
 
