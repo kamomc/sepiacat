@@ -12,6 +12,7 @@
       <th><%= model_class.human_attribute_name(:longitude) %></th>
       <th><%= model_class.human_attribute_name(:year) %></th>
       <th><%= model_class.human_attribute_name(:comment) %></th>
+      <th><%= model_class.human_attribute_name(:license) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -26,6 +27,7 @@
         <td><%= spot.longitude %></td>
         <td><%= spot.year %></td>
         <td><%= spot.comment %></td>
+        <td><%= image_tag spot.license_image %></td>
         <td><%=l spot.created_at %></td>
         <td>
           <%= link_to t('.show', :default => t("helpers.links.show")),

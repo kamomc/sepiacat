@@ -17,6 +17,7 @@ ja:
         year: "年代(西暦)"
         comment: "解説"
         created_at: "作成日時"
+        license: "ライセンス"
   date:
     abbr_day_names:
     - 日
