@@ -45,12 +45,12 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">SepiaCat</a>
+        <a class="navbar-brand" href="<%= map_path %>">SepiaCat</a>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
+            <li><%= link_to "マップ", map_path  %></li>
             <li><%= link_to "スポット一覧", spots_path  %></li>
             <li><%= link_to "スポット登録", new_spot_path  %></li>
-            <li><%= link_to "マップ(未実装)", "#"  %></li>
           </ul>
         </div>
       </div>
@@ -69,7 +69,7 @@
               <!--<li class="nav-header">工事中</li>-->
               <li><%= link_to "スポット一覧", spots_path  %></li>
               <li><%= link_to "スポット登録", new_spot_path  %></li>
-              <li><%= link_to "マップ(未実装)", "#"  %></li>
+              <li><%= link_to "マップ", map_path  %></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
