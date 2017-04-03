@@ -18,6 +18,22 @@
   <dd><%= @spot.comment %></dd>
   <dt><strong><%= model_class.human_attribute_name(:license) %>:</strong></dt>
   <dd><%= image_tag @spot.license_image %></dd>
+  <dt><strong>マップ</strong></dt>
+  <%= map(:center => {
+      :latlng => [@spot.latitude, @spot.longitude],
+      :zoom => 16
+  },
+          :markers => [
+              {
+                  :latlng => [@spot.latitude, @spot.longitude],
+                  :popup => @spot.name,
+                  :icon => {
+                      :icon_url => 'images/pin.png',
+                      :popup_anchor => [14, 0]
+                  }
+              }
+          ])
+  %>
 </dl>
 
 <%= link_to t('.back', :default => t("helpers.links.back")),
