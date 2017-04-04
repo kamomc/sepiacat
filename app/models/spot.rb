@@ -20,6 +20,20 @@ class Spot < ApplicationRecord
     end
   end
 
+  def marker
+    {
+        :latlng => [self.latitude, self.longitude],
+        :popup => ActionController::Base.helpers.link_to(self.name, Rails.application.routes.url_helpers.spot_path(self)),
+        :icon => {
+            :icon_url => 'images/pin.png',
+            :shadow_url => 'images/shadow.png',
+            :popup_anchor => [2, -41],
+            :shadow_anchor => [10, 41],
+            :icon_anchor => [10, 41]
+        }
+    }
+  end
+
   validates :name,
             presence: true
   validates :image,
