@@ -1,8 +1,14 @@
 <!--<h1>Map#show</h1>-->
 <!--<p>Find me in app/views/map/show.html.erb</p>-->
+<%= search_form_for(@q, url: map_path) do |f| %>
+    <%= f.label :name_or_comment_cont, 'キーワード' %>
+    <%= f.text_field :name_or_comment_cont %>
+
+    <%= f.submit '検索' %>
+<% end %>
 <%= map(:center => {
     :latlng => [35.1223893, 138.9137784],
     :zoom => 16
 },
-    :markers => @markers )
+        :markers => @markers)
 %>
