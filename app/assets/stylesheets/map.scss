@@ -5,3 +5,27 @@
 #map {
   height: 800px;
 }
+
+.leaflet-popup-content {
+  h2 {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  p {
+    color: black;
+  }
+
+  a {
+    color: darkslategray !important;
+  }
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background-image: image_url('bg.jpg') !important;
+}
+
+a.leaflet-popup-close-button {
+  color: black !important;
+}

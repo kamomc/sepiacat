@@ -23,7 +23,10 @@ class Spot < ApplicationRecord
   def marker
     {
         :latlng => [self.latitude, self.longitude],
-        :popup => ActionController::Base.helpers.link_to(self.name, Rails.application.routes.url_helpers.spot_path(self)),
+        :popup => ActionController::Base.helpers.content_tag(:h2, self.name) +
+            ActionController::Base.helpers.image_tag(self.image.url, width: 300) +
+            ActionController::Base.helpers.content_tag(:p, self.comment) +
+            ActionController::Base.helpers.link_to("詳細を見る", Rails.application.routes.url_helpers.spot_path(self)),
         :icon => {
             :icon_url => 'images/pin.png',
             :shadow_url => 'images/shadow.png',
