@@ -4,7 +4,8 @@ class SpotsController < ApplicationController
   # GET /spots
   # GET /spots.json
   def index
-    @spots = Spot.all
+    @q = Spot.ransack(search_params)
+    @spots = @q.result
   end
 
   # GET /spots/1
@@ -62,13 +63,21 @@ class SpotsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_spot
-      @spot = Spot.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_spot
+    @spot = Spot.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def spot_params
-      params.require(:spot).permit(:name, :image, :latitude, :longitude, :year, :comment, :license, :remove_image, :image_cache)
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def spot_params
+    params.require(:spot).permit(:name, :image, :latitude, :longitude, :year, :comment, :license, :remove_image, :image_cache)
+  end
+
+  def search_params
+    if params[:q] == nil then
+      []
+    else
+      params[:q].to_unsafe_h
     end
+  end
 end
