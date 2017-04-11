@@ -2,6 +2,15 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
 </div>
+<%= search_form_for @q do |f| %>
+    <%= f.label :name_or_comment_cont, 'キーワード' %>
+    <%= f.text_field :name_or_comment_cont %>
+
+    <%= f.label :year_lt, '年代' %>
+    <%= f.text_field :year_gteq %> 〜 <%= f.text_field :year_lteq %>
+
+    <%= f.submit '検索' %>
+<% end %>
 <table class="table table-striped">
   <thead>
     <tr>
