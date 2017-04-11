@@ -1,19 +1,18 @@
 class MapController < ApplicationController
   def show
-    @q = Spot.search(name_or_comment_cont: search_param)
+    @q = Spot.ransack(search_params)
     @markers = []
     for spot in @q.result do
       @markers.push(spot.marker)
     end
   end
 
-
   private
-  def search_param
+  def search_params
     if params[:q] == nil then
       []
     else
-      params.require(:q).permit(:name_or_comment_cont)[:name_or_comment_cont]
+      params[:q].to_unsafe_h
     end
   end
 end

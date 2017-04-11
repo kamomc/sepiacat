@@ -2,7 +2,10 @@
 <!--<p>Find me in app/views/map/show.html.erb</p>-->
 <%= search_form_for(@q, url: map_path) do |f| %>
     <%= f.label :name_or_comment_cont, 'キーワード' %>
-    <%= f.text_field :name_or_comment_cont %>
+    <%= f.text_field :name_or_comment_cont %><br>
+
+    <%= f.label :year_lt, '年代' %>
+    <%= f.text_field :year_gteq %> 〜 <%= f.text_field :year_lteq %><br>
 
     <%= f.submit '検索' %>
 <% end %>
