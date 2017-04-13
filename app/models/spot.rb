@@ -24,7 +24,7 @@ class Spot < ApplicationRecord
     {
         :latlng => [self.latitude, self.longitude],
         :popup => ActionController::Base.helpers.content_tag(:h2, self.name) +
-            ActionController::Base.helpers.image_tag(self.image.url, width: 300) +
+            ActionController::Base.helpers.content_tag(:dl,ActionController::Base.helpers.content_tag(:dt, ActionController::Base.helpers.image_tag(self.image.url) ) )+
             ActionController::Base.helpers.content_tag(:p, self.comment) +
             ActionController::Base.helpers.link_to("詳細を見る", Rails.application.routes.url_helpers.spot_path(self)),
         :icon => {
