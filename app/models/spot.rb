@@ -28,13 +28,26 @@ class Spot < ApplicationRecord
             ActionController::Base.helpers.content_tag(:p, self.comment) +
             ActionController::Base.helpers.link_to("詳細を見る", Rails.application.routes.url_helpers.spot_path(self)),
         :icon => {
-            :icon_url => 'images/pin.png',
-            :shadow_url => 'images/shadow.png',
+            :icon_url => pin_image,
             :popup_anchor => [2, -41],
             :shadow_anchor => [10, 41],
-            :icon_anchor => [10, 41]
+            :icon_anchor => [22, 51]
         }
     }
+  end
+
+  def pin_image
+    if self.year < 1940 then
+      'images/marker5-8.png'
+    elsif self.year < 1960 then
+      'images/marker4-8.png'
+    elsif self.year < 1980 then
+      'images/marker3-8.png'
+    elsif self.year < 2000 then
+      'images/marker2-8.png'
+    else
+      'images/marker1-8.png'
+    end
   end
 
   validates :name,
