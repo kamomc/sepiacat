@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 
-# BootStrapをあてる
+# BootStrap
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
@@ -45,7 +45,11 @@ gem 'simple_form'
 # OSM
 gem 'leaflet-rails'
 
+# 検索
 gem 'ransack'
+
+# SLIM
+gem 'slim'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
