@@ -32,6 +32,16 @@ html[lang="en"]
               = link_to "スポット一覧", spots_path
             li
               = link_to "スポット登録", new_spot_path
+          ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              li
+                = link_to "ログアウト", destroy_user_session_path, method: :delete
+            - else
+              li
+                = link_to "ユーザー登録", new_user_registration_path
+              li
+                = link_to "ログイン", new_user_session_path
+
     .container
       .row
         .col-lg-9
