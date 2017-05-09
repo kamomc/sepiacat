@@ -30,8 +30,12 @@ html[lang="en"]
               = link_to "マップ", map_path
             li
               = link_to "スポット一覧", spots_path
-            li
-              = link_to "スポット登録", new_spot_path
+            - if can? :create, Spot
+              li
+                = link_to "スポット登録", new_spot_path
+            - if current_user.admin?
+              li
+                = link_to "ユーザー一覧", users_path
           ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               li
@@ -44,20 +48,20 @@ html[lang="en"]
 
     .container
       .row
-        .col-lg-9
+        .col-lg-12
           = bootstrap_flash
           = yield
-        .col-lg-3
-          .well.sidebar-nav
-            h3
-              | SepiaCat
-            ul.nav.nav-list
-              li
-                = link_to "スポット一覧", spots_path
-              li
-                = link_to "スポット登録", new_spot_path
-              li
-                = link_to "マップ", map_path
+        /.col-lg-3
+        /  .well.sidebar-nav
+        /    h3
+        /      | SepiaCat
+        /    ul.nav.nav-list
+        /      li
+        /        = link_to "スポット一覧", spots_path
+        /      li
+        /        = link_to "スポット登録", new_spot_path
+        /      li
+        /        = link_to "マップ", map_path
       footer
         p
           | © SepiaCat Mishima 2017
