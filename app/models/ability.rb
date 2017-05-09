@@ -34,10 +34,10 @@ class Ability
       can :manage, :all
     end
 
-    if user.editor?
-      can :manage, Spot, owner: user
-      can :read, Spot
-    end
+    # if user.editor?
+    #   can :manage, Spot, owner: user
+    #   can :read, Spot
+    # end
     
     if user.viewer?
       can :read, Spot

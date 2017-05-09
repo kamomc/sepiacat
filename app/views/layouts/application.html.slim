@@ -33,7 +33,7 @@ html[lang="en"]
             - if can? :create, Spot
               li
                 = link_to "スポット登録", new_spot_path
-            - if current_user.admin?
+            - if user_signed_in? && current_user.admin?
               li
                 = link_to "ユーザー一覧", users_path
           ul.nav.navbar-nav.navbar-right
