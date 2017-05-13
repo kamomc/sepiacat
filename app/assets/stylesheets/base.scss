@@ -21,3 +21,7 @@ thead {
 .table-striped > tbody > tr:nth-of-type(odd) {
   background-color: $white-mask !important;
 }
+
+.dl-horizontal dd {
+  margin-bottom: 10px;
+}
