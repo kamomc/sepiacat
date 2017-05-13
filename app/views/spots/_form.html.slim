@@ -7,7 +7,7 @@
   = f.input :longitude
   = f.input :year
   = f.input :comment
-  = f.input :license, as: :select, collection: Spot.localed_licenses
+  /= f.input :license, as: :select, collection: Spot.localed_licenses
   = f.button :submit, :class => 'btn-primary'
   = link_to t('.cancel', :default => t("helpers.links.cancel")),
   -                 spots_path, :class => 'btn btn-default'
