@@ -1,6 +1,6 @@
 = simple_form_for @spot, :html => {:class => 'form-horizontal'} do |f|
   = f.input :name
-  /= f.input :image
+  = f.input :image
   /- if @spot.image?
   /  = image_tag @spot.image.url, width: 300
   /= f.input :latitude
