@@ -5,7 +5,7 @@
     = image_tag @spot.image.url, width: 300
   = f.input :latitude
   = f.input :longitude
-  /= f.input :year
+  = f.input :year
   /= f.input :comment
   /= f.input :license, as: :select, collection: Spot.localed_licenses
   /= f.button :submit, :class => 'btn-primary'
