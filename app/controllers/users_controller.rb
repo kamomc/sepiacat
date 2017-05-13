@@ -12,6 +12,18 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def destroy
+    respond_to do |format|
+      if can? :destroy, User
+        @user.destroy
+        format.html {redirect_to users_url, notice: 'ユーザー情報を削除しました。'}
+        format.json {head :no_content}
+      else
+        format.html {redirect_to users_url, alert: 'ユーザーを削除する権限がありません。'}
+      end
+    end
+  end
+
   def update
     respond_to do |format|
       if can? :update, User
