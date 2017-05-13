@@ -1,0 +1,14 @@
+h2
+  | ユーザー登録
+= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = f.error_notification
+  .form-inputs
+    = f.input :email, required: true, autofocus: true
+    = f.input :password, required: true, hint: ("#{@minimum_password_length} 文字以上で入力して下さい。" if @minimum_password_length)
+    = f.input :password_confirmation, required: true
+  p 登録完了後、管理者があなたの権限を変更するとスポット登録などの操作ができるようになります。
+  p 登録ボタンを押したらセピアキャットの Facebook グループで管理者へご連絡ください。
+  .form-actions
+    = f.button :submit, "登録"
+
+= render "devise/shared/links"

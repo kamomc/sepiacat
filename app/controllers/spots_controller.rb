@@ -25,15 +25,19 @@ class SpotsController < ApplicationController
   # POST /spots
   # POST /spots.json
   def create
-    @spot = Spot.new(spot_params)
-
     respond_to do |format|
-      if @spot.save
-        format.html { redirect_to @spot, notice: 'スポット情報を作成しました。' }
-        format.json { render :show, status: :created, location: @spot }
+      if can? :create, Spot
+        @spot = Spot.new(spot_params)
+
+        if @spot.save
+          format.html {redirect_to @spot, notice: 'スポット情報を作成しました。'}
+          format.json {render :show, status: :created, location: @spot}
+        else
+          format.html {render :new}
+          format.json {render json: @spot.errors, status: :unprocessable_entity}
+        end
       else
-        format.html { render :new }
-        format.json { render json: @spot.errors, status: :unprocessable_entity }
+        format.html {redirect_to @spot, notice: 'スポット情報を作成する権限がありません。'}
       end
     end
   end
@@ -42,12 +46,16 @@ class SpotsController < ApplicationController
   # PATCH/PUT /spots/1.json
   def update
     respond_to do |format|
-      if @spot.update(spot_params)
-        format.html { redirect_to @spot, notice: 'スポット情報を更新しました。' }
-        format.json { render :show, status: :ok, location: @spot }
+      if can? :update, Spot
+        if @spot.update(spot_params)
+          format.html {redirect_to @spot, notice: 'スポット情報を更新しました。'}
+          format.json {render :show, status: :ok, location: @spot}
+        else
+          format.html {render :edit}
+          format.json {render json: @spot.errors, status: :unprocessable_entity}
+        end
       else
-        format.html { render :edit }
-        format.json { render json: @spot.errors, status: :unprocessable_entity }
+        format.html {redirect_to @spot, alert: 'スポット情報を更新する権限がありません。'}
       end
     end
   end
@@ -55,10 +63,14 @@ class SpotsController < ApplicationController
   # DELETE /spots/1
   # DELETE /spots/1.json
   def destroy
-    @spot.destroy
     respond_to do |format|
-      format.html { redirect_to spots_url, notice: 'スポット情報を削除しました。' }
-      format.json { head :no_content }
+      if can? :destroy, Spot
+        @spot.destroy
+        format.html {redirect_to spots_url, notice: 'スポット情報を削除しました。'}
+        format.json {head :no_content}
+      else
+        format.html {redirect_to spots_url, alert: 'スポットを削除する権限がありません。'}
+      end
     end
   end
 

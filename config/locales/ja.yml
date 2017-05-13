@@ -8,6 +8,7 @@ ja:
           has_many: "%{record}が存在しているので削除できません"
     models:
       spot: "スポット情報"
+      user: "ユーザー情報"
     attributes:
       spot:
         name: "名前"
@@ -18,6 +19,12 @@ ja:
         comment: "解説"
         created_at: "作成日時"
         license: "ライセンス"
+      user:
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認)"
+        remember_me: "次回以降入力を省略する"
+        role: "権限"
   date:
     abbr_day_names:
     - 日

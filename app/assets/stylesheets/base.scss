@@ -1,0 +1,27 @@
+@import "_colors.scss";
+body {
+  background-color: $base-color-light !important;
+  color: $text-color-black !important;
+}
+
+.navbar-default {
+  background-color: $accent-color-dark !important;
+  border-color: $accent-color-orange !important;
+
+  a {
+    color: $text-color-white !important;
+  }
+}
+
+thead {
+  background-color: $accent-color-orange;
+  color: $text-color-white;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: $white-mask !important;
+}
+
+.dl-horizontal dd {
+  margin-bottom: 10px;
+}

@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'carrierwave'
 gem 'carrierwave-aws'
 
-# BootStrapをあてる
+# BootStrap
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'simple_form'
@@ -45,7 +45,17 @@ gem 'simple_form'
 # OSM
 gem 'leaflet-rails'
 
+# 検索
 gem 'ransack'
+
+# SLIM
+gem 'slim'
+
+# Facebook ユーザーアカウント連携
+gem 'devise'
+gem 'omniauth'
+gem 'omniauth-facebook'
+gem 'cancancan'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -60,6 +70,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'sqlite3'
+  gem 'letter_opener'
 end
 
 group :production do
