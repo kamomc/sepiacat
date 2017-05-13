@@ -1,26 +1,28 @@
 // Place all the styles related to the Map controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "_colors.scss";
 
 #map {
   height: 80vh;
+  border: 1px solid $accent-color-dark;
 }
 
 .leaflet-popup-content {
   width: 300px !important;
 
   h2 {
-    color: black;
+    color: $text-color-black;
     font-size: 14px;
     font-weight: bold;
   }
 
   p {
-    color: black;
+    color: $text-color-black;
   }
 
   a {
-    color: darkslategray !important;
+    color: $accent-color-blue !important;
   }
 
   img {
@@ -44,9 +46,10 @@
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup-tip {
-  background-image: image_url('bg.jpg') !important;
+  //background-image: image_url('bg.jpg') !important;
+  background-color: $base-color-normal !important;
 }
 
 a.leaflet-popup-close-button {
-  color: black !important;
+  color: $text-color-black !important;
 }

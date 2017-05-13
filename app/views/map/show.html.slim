@@ -1,9 +1,12 @@
-= search_form_for(@q, url: map_path) do |f|
-  = f.label :name_or_comment_cont, 'キーワード'
-  = f.text_field :name_or_comment_cont
-  = f.label :year_lt, '年代'
-  = f.text_field :year_gteq
-  |  〜 
-  = f.text_field :year_lteq
-  = f.submit '検索'
+= search_form_for(@q, url: map_path, html: {class: 'form-inline'}) do |f|
+  .form-group
+    = f.label :name_or_comment_cont, 'キーワード'
+    = f.text_field :name_or_comment_cont, class: 'form-control'
+  .form-group
+    = f.label :year_lt, '年代'
+    = f.text_field :year_gteq, class: 'form-control'
+    |  〜
+    = f.text_field :year_lteq, class: 'form-control'
+  = f.submit '検索', class: "btn btn-default"
+br
 = map(:center => {:latlng => [35.1223893, 138.9137784], :zoom => 16}, :markers => @markers)
