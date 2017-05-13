@@ -21,6 +21,9 @@ ja:
         license: "ライセンス"
       user:
         email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード(確認)"
+        remember_me: "次回以降入力を省略する"
         role: "権限"
   date:
     abbr_day_names:
