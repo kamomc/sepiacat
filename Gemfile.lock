@@ -233,6 +233,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
+    wareki (0.1.3)
     web-console (3.5.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
@@ -275,6 +276,7 @@ DEPENDENCIES
   twitter-bootstrap-rails
   tzinfo-data
   uglifier (>= 1.3.0)
+  wareki
   web-console (>= 3.3.0)
 
 BUNDLED WITH

@@ -16,6 +16,7 @@ ja:
         latitude: "緯度"
         longitude: "経度"
         year: "年代(西暦)"
+        wareki: "年代"
         comment: "解説"
         created_at: "作成日時"
         license: "ライセンス"

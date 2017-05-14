@@ -50,6 +50,10 @@ class Spot < ApplicationRecord
     end
   end
 
+  def wareki
+    Date.civil(self.year, 1, 1).strftime("%Jy年 ( %Y 年)")
+  end
+
   validates :name,
             presence: true
   validates :image,
