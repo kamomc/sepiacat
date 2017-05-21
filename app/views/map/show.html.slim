@@ -7,6 +7,21 @@
     = f.text_field :year_gteq, class: 'form-control'
     |  〜
     = f.text_field :year_lteq, class: 'form-control'
-  = f.submit '検索', class: "btn btn-default"
+  = f.submit '検索', class: "btn btn-default", id: "map_q_submit"
+button.btn.btn-default.pin-legend#pin_legend_1
+  = image_tag "marker5-8.png", width: 40
+  | 昭和初期以前(〜1940年)
+button.btn.btn-default.pin-legend#pin_legend_2
+  = image_tag "marker4-8.png", width: 40
+  | 昭和中期(1941年〜1960年)
+button.btn.btn-default.pin-legend#pin_legend_3
+  = image_tag "marker3-8.png", width: 40
+  | 昭和後期(1961年〜1980年)
+button.btn.btn-default.pin-legend#pin_legend_4
+  = image_tag "marker2-8.png", width: 40
+  | 昭和末期/平成初期(1981年〜2000年)
+button.btn.btn-default.pin-legend#pin_legend_5
+  = image_tag "marker1-8.png", width: 40
+  | 現代(2001年〜)
 br
 = map(:center => {:latlng => [35.1223893, 138.9137784], :zoom => 16}, :markers => @markers)
