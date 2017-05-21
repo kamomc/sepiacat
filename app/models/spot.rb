@@ -37,13 +37,13 @@ class Spot < ApplicationRecord
   end
 
   def pin_image
-    if self.year < 1940 then
+    if self.year <= 1940 then
       'images/marker5-8.png'
-    elsif self.year < 1960 then
+    elsif self.year <= 1960 then
       'images/marker4-8.png'
-    elsif self.year < 1980 then
+    elsif self.year <= 1980 then
       'images/marker3-8.png'
-    elsif self.year < 2000 then
+    elsif self.year <= 2000 then
       'images/marker2-8.png'
     else
       'images/marker1-8.png'
