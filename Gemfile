@@ -49,7 +49,7 @@ gem 'leaflet-rails'
 gem 'ransack'
 
 # SLIM
-gem 'slim'
+gem 'slim-rails'
 
 # Facebook ユーザーアカウント連携
 gem 'devise'

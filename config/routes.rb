@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get 'map' => 'map#show'
+  get 'about' => 'static_pages#about'
 
   resources :spots
   resources :users, :only => [:index, :show, :edit, :update, :destroy]

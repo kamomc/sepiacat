@@ -1,67 +1,12 @@
 doctype html
-html[lang="en"]
-  head
-    meta[charset="utf-8"]
-    meta[http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"]
-    meta[name="viewport" content="width=device-width, initial-scale=1.0"]
-    title
-      = content_for?(:title) ? yield(:title) : "Sepiacat"
-    = csrf_meta_tags
-    = stylesheet_link_tag "application", :media => "all"
-    = favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144'
-    = favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114'
-    = favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72'
-    = favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png'
-    = favicon_link_tag 'favicon.ico', :rel => 'shortcut icon'
-    = javascript_include_tag "application"
+html[lang="ja"]
+  = render :partial => "layouts/head"
   body
-    .navbar.navbar-default.navbar-static-top
-      .container
-        button.navbar-toggle[type="button" data-toggle="collapse" data-target=".navbar-responsive-collapse"]
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        |  <a class="navbar-brand" href="
-        = map_path
-        | ">SepiaCat
-        .navbar-collapse.collapse.navbar-responsive-collapse
-          ul.nav.navbar-nav
-            li
-              = link_to "マップ", map_path
-            li
-              = link_to "スポット一覧", spots_path
-            - if can? :create, Spot
-              li
-                = link_to "スポット登録", new_spot_path
-            - if user_signed_in? && current_user.admin?
-              li
-                = link_to "ユーザー一覧", users_path
-          ul.nav.navbar-nav.navbar-right
-            - if user_signed_in?
-              li
-                = link_to "ログアウト", destroy_user_session_path, method: :delete
-            - else
-              li
-                = link_to "ユーザー登録", new_user_registration_path
-              li
-                = link_to "ログイン", new_user_session_path
-
+    = render :partial => "layouts/header"
     .container
       .row
         .col-lg-12
+          .header-space
           = bootstrap_flash
           = yield
-        /.col-lg-3
-        /  .well.sidebar-nav
-        /    h3
-        /      | SepiaCat
-        /    ul.nav.nav-list
-        /      li
-        /        = link_to "スポット一覧", spots_path
-        /      li
-        /        = link_to "スポット登録", new_spot_path
-        /      li
-        /        = link_to "マップ", map_path
-      footer
-        p
-          | © SepiaCat Mishima 2017
+      = render :partial => "layouts/footer"

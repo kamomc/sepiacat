@@ -1,4 +1,5 @@
 @import "_colors.scss";
+
 body {
   background-color: $base-color-light !important;
   color: $text-color-black !important;
@@ -7,6 +8,8 @@ body {
 .navbar-default {
   background-color: $accent-color-dark !important;
   border-color: $accent-color-orange !important;
+  position: fixed !important;
+  width: 100% !important;
 
   a {
     color: $text-color-white !important;
@@ -24,4 +27,173 @@ thead {
 
 .dl-horizontal dd {
   margin-bottom: 10px;
+}
+
+#header {
+  width: 100%;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0px;
+  z-index: 1000;
+
+  .inner {
+    min-width: 945px;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    .navi.pc {
+      .main-menu {
+        text-align: center;
+        margin: 0 164px;
+
+        li {
+          height: 80px;
+          line-height: 80px;
+          display: inline-block;
+          box-sizing: border-box;
+          margin: 0 1%;
+
+          a {
+            color: #fff;
+            font-size: 1.5rem;
+            padding: 0 10px;
+          }
+        }
+      }
+    }
+    a.btn-login {
+      height: 56px;
+      width: 12%;
+      max-width: 140px;
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      text-align: center;
+
+      width: 100%;
+      height: 56px;
+      line-height: 56px;
+      padding: 0 10px;
+      background: $accent-color-orange;
+      display: block;
+      font-size: 1.5rem;
+      color: #fff;
+    }
+  }
+}
+
+#about {
+  #overview-1 {
+    .top-main {
+      width: 100%;
+      max-height: 625px;
+      background: #000;
+      overflow: hidden;
+      position: relative;
+
+      &:after {
+        content: "";
+        display: block;
+        padding-top: 48%;
+      }
+
+      .image {
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+
+  #our-goal {
+    margin-top: 50px;
+    padding: 50px 0;
+    background: $base-color-normal;
+    ul {
+      width: 92.1875%;
+      max-width: 1180px;
+      text-align: left;
+      margin: 28px auto 0 auto;
+
+      li {
+        width: 30.6%;
+        height: auto;
+        background: #000;
+        color: #fff;
+        display: inline-block;
+        margin: 32px 2.7% 0 0;
+        vertical-align: top;
+        position: relative;
+        list-style-type: none;
+
+        &:before {
+          content: "";
+          display: block;
+          padding-bottom: 100%;
+        }
+
+        .image {
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: cover;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .text {
+          width: 100%;
+          height: 6rem;
+          line-height: 6rem;
+          position: absolute;
+          text-align: center;
+          bottom: 0;
+          left: 0;
+          font-size: 1.8rem;
+          background: rgba(0,0,0,0.4);
+        }
+      }
+    }
+  }
+
+  #activity {
+    padding: 50px 0;
+    p {
+      font-size: 2rem;
+      text-align: left;
+      padding-top: 50px;
+      margin: 0 auto;
+      width: 960px;
+    }
+    img {
+      display: block;
+      margin: 50px auto;
+    }
+  }
+
+
+  h3 {
+    font-size: 4.0rem;
+    line-height: 4rem;
+    text-align: center;
+  }
+
+  .top-lead {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 50px;
+    margin: 0 auto;
+  }
+}
+
+.header-space {
+  height: 90px;
 }
