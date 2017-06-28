@@ -42,6 +42,22 @@ thead {
     max-width: 1280px;
     margin: 0 auto;
     position: relative;
+
+    h1 {
+      font-size: 1.0rem;
+      position: absolute;
+      top: 18px;
+      left: 26px;
+      z-index: 1;
+      margin-top: 0px !important;
+      margin-bottom: 0px !important;
+
+      img {
+        display: inline;
+        height: 40px;
+      }
+    }
+
     .navi.pc {
       .main-menu {
         text-align: center;
@@ -159,7 +175,7 @@ thead {
           bottom: 0;
           left: 0;
           font-size: 1.8rem;
-          background: rgba(0,0,0,0.4);
+          background: rgba(0, 0, 0, 0.4);
         }
       }
     }
@@ -180,6 +196,48 @@ thead {
     }
   }
 
+  #feature-work {
+    padding: 50px 0;
+    background: $base-color-normal;
+
+    table {
+      max-width: 700px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      text-align: left;
+      margin: 40px auto;
+
+      tbody {
+        th {
+          border-bottom: 1px solid $accent-color-orange;
+          padding: 18px 0;
+          font-weight: bold;
+          vertical-align: top;
+        }
+        td {
+          width: 78%;
+          border-bottom: 1px solid $accent-color-orange;
+          padding: 18px 0;
+        }
+      }
+    }
+  }
+
+  #guidline {
+    padding: 50px 0;
+    background: $base-color-normal;
+
+    ol {
+      max-width: 700px;
+      font-size: 1.6rem;
+      line-height: 2.0;
+      margin: 40px auto;
+
+      li.guide {
+        margin-bottom: 24px;
+      }
+    }
+  }
 
   h3 {
     font-size: 4.0rem;
@@ -197,4 +255,10 @@ thead {
 
 .header-space {
   height: 90px;
+}
+
+#footer {
+  margin: 50px auto;
+  text-align: center;
+  font-size: 2.0rem;
 }
