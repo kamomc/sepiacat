@@ -251,6 +251,19 @@ thead {
     padding-top: 50px;
     margin: 0 auto;
   }
+
+  #inquiry {
+    padding: 50px 0;
+
+    .fb {
+      text-align: center;
+      font-size: 2rem;
+      margin: 20px 0;
+      img {
+        margin-right: 12px;
+      }
+    }
+  }
 }
 
 .header-space {

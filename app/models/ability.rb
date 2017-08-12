@@ -38,7 +38,7 @@ class Ability
     #   can :manage, Spot, owner: user
     #   can :read, Spot
     # end
-    
+
     if user.viewer?
       can :read, Spot
     end

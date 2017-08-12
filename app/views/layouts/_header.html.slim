@@ -13,6 +13,8 @@ header
               = link_to "マップ", map_path
             li
               = link_to "スポット一覧", spots_path
+            li
+              = link_to "お問い合わせ", about_path(anchor: "inquiry")
             - if can? :create, Spot
               li
                 = link_to "スポット登録", new_spot_path
