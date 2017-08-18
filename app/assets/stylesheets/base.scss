@@ -190,9 +190,16 @@ thead {
       margin: 0 auto;
       width: 960px;
     }
-    img {
+    img.activity {
       display: block;
       margin: 50px auto;
+    }
+    h3.concept-movie {
+      margin-top: 100px;
+    }
+    div.concept-movie {
+      margin: 50px auto;
+      text-align: center;
     }
   }
 

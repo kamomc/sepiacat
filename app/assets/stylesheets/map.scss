@@ -16,7 +16,7 @@
 }
 
 .leaflet-popup-content {
-  width: 300px !important;
+  width: 450px !important;
 
   h2 {
     color: $text-color-black;
@@ -35,8 +35,8 @@
   img {
     width: auto;
     height: auto;
-    max-width: 300px;
-    max-height: 169px;
+    max-width: 450px;
+    max-height: 253px;
   }
 
   dl {
@@ -45,8 +45,8 @@
 
   dt {
     display: table-cell;
-    width: 300px;
-    height: 169px;
+    width: 450px;
+    height: 253px;
     text-align: center;
     vertical-align: middle;
   }
