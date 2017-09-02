@@ -259,6 +259,34 @@ thead {
     margin: 0 auto;
   }
 
+  #member {
+    padding: 50px 0;
+
+    table {
+      max-width: 700px;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      text-align: left;
+      margin: 40px auto;
+
+      tbody {
+        th {
+          border-bottom: 1px solid $accent-color-orange;
+          padding: 18px 0;
+          font-weight: bold;
+          vertical-align: top;
+          width: 130px;
+          text-align: center;
+        }
+        td {
+          width: 78%;
+          border-bottom: 1px solid $accent-color-orange;
+          padding: 18px 0;
+        }
+      }
+    }
+  }
+
   #inquiry {
     padding: 50px 0;
 
