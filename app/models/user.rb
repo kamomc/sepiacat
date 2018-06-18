@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  enum role: {admin: 0, viewer: 2}
+  enum role: {admin: 0, editor: 1, viewer: 2}
 
   class << self
     def located_roles
