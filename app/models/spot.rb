@@ -24,9 +24,10 @@ class Spot < ApplicationRecord
     {
         :latlng => [self.latitude, self.longitude],
         :popup => ActionController::Base.helpers.content_tag(:h2, self.name) +
-            ActionController::Base.helpers.content_tag(:dl,ActionController::Base.helpers.content_tag(:dt, ActionController::Base.helpers.image_tag(self.image.url) ) )+
+            ActionController::Base.helpers.link_to(ActionController::Base.helpers.content_tag(:dl, ActionController::Base.helpers.content_tag(:dt, ActionController::Base.helpers.image_tag(self.image.url))), self.image.url, data: {lity: ''})+
             ActionController::Base.helpers.content_tag(:p, self.comment) +
-            ActionController::Base.helpers.link_to("詳細を見る", Rails.application.routes.url_helpers.spot_path(self)),
+            ActionController::Base.helpers.link_to("[詳細を見る]", Rails.application.routes.url_helpers.spot_path(self)) +
+            ActionController::Base.helpers.link_to("[画像を拡大]", self.image.url, data: {lity: ''}),
         :icon => {
             :icon_url => pin_image,
             :popup_anchor => [2, -41],

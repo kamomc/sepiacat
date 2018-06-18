@@ -22,6 +22,7 @@ table.table.table-striped
         = model_class.human_attribute_name(:name)
       th
         = model_class.human_attribute_name(:image)
+        | (クリックで拡大表示)
       th
         = model_class.human_attribute_name(:latitude)
       th
@@ -44,7 +45,7 @@ table.table.table-striped
         td
           = spot.name
         td
-          = image_tag spot.image.url, width: 200
+          = link_to(image_tag(spot.image.url, width: 200), spot.image.url, data: {lity: ''})
         td
           = spot.latitude
         td

@@ -17,3 +17,5 @@
 //= require_tree .
 //= require leaflet
 //= require gifffer
+//= require lity
+//

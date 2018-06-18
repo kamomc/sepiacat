@@ -14,7 +14,7 @@ dl.dl-horizontal
       = model_class.human_attribute_name(:image)
       | :
   dd
-    = image_tag @spot.image.url, width: 300
+    = link_to(image_tag(@spot.image.url, width: 300), @spot.image.url, data: {lity: ''})
   dt
     strong
       = model_class.human_attribute_name(:latitude)
@@ -54,10 +54,10 @@ dl.dl-horizontal
 = link_to t('.back', :default => t("helpers.links.back")),
         spots_path, :class => 'btn btn-default'
 - can? :manage, @spot
-  = link_to t('.edit', :default => t("helpers.links.edit")),
-          edit_spot_path(@spot), :class => 'btn btn-default'
-  = link_to t('.destroy', :default => t("helpers.links.destroy")),
-          spot_path(@spot),
-          :method => 'delete',
-          :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
-          :class => 'btn btn-danger'
+= link_to t('.edit', :default => t("helpers.links.edit")),
+        edit_spot_path(@spot), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")),
+        spot_path(@spot),
+        :method => 'delete',
+        :data => {:confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?'))},
+        :class => 'btn btn-danger'
